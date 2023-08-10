@@ -1,4 +1,8 @@
-FROM nginx:alpine
-COPY Project ./Project
-COPY nginx.conf   ./etc/nginx/nginx.conf
+# استفاده از تصویر اصلی Nginx
+FROM nginx:latest
+
+
+COPY ./Project /usr/share/nginx/html
+
+# پورت‌های مورد استفاده توسط Nginx
 EXPOSE 80
