@@ -4,7 +4,7 @@ showAnswerButtons.forEach(button => {
     button.addEventListener('click', async () => {
         const answer = button.nextElementSibling;
         if (answer.classList.contains('hidden')) {
-            const question = button.previousElementSibling.innerText.trim();
+            const question = document.getElementsByClassName("myquestion").item.toString();
             const response = await getAnswerFromAPI(question);
             answer.textContent = response.answer;
         }
@@ -14,7 +14,7 @@ showAnswerButtons.forEach(button => {
 
 async function getAnswerFromAPI(question) {
     try {
-        const response = await fetch('https://', {
+        const response = await fetch('https://test-mlops.darkube.app/question', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
